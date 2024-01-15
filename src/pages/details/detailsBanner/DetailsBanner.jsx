@@ -18,7 +18,7 @@ const DetailsBanner = ({ video, crew }) => {
 
 	const {url} = useSelector(state => state.home)
 
-	const _genres = data?.genres.map((g) => (g.id))
+	const _genres = data?.genres?.map((g) => (g.id))
 	const director = crew?.filter(f=> f.job === "Director");
 	const writer = crew?.filter(f => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer")
 
@@ -59,7 +59,7 @@ const DetailsBanner = ({ video, crew }) => {
 											</div>
 											<Genres data={_genres} />
 											<div className="row">
-												<CircleRating rating={data.vote_average.toFixed(1)}/>
+												<CircleRating rating={data?.vote_average.toFixed(1)}/>
 												<div className="playbtn" onClick={()=> {setShow(true); setVideoId(video?.key);}}>
 													<PlayIcon />
 													<span className="text">

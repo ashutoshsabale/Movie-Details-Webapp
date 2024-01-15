@@ -8,7 +8,7 @@ function Recommondation({mediaType, id}) {
 
     const title = "Recommonded"
 
-    if(data?.results.length===0) return;
+    if(data?.results?.length===0) return;
 
     return (
       <Carousel title={title} data={data?.results} loading={loading} endpoint = {mediaType}/>

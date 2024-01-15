@@ -1,12 +1,11 @@
 import { useEffect } from "react"
 import fetchDataFromApi from "./utils/api.js"
 import { getApiConfiguration, getGenres } from "./store/homeSlice.js"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { Outlet } from "react-router-dom"
 import { Header, Footer } from "./components/index.js"
 
 function App() {
-    // const url = useSelector(state => state.home)
     const dispatch = useDispatch()
     const apiConfigure = () => {
         fetchDataFromApi('/configuration')
@@ -31,7 +30,7 @@ function App() {
 
         const data = await Promise.all(promises);
 
-        data.map(({genres}) => {
+        data?.map(({genres}) => {
             return genres.map((item) => (allGenres[item.id] = item))
         });
 
