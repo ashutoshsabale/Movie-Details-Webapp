@@ -1,6 +1,6 @@
 import Footer from "./footer/Footer.jsx";
 import Header from "./header/Header.jsx";
-import Img from "./lazyLoadImg/img.jsx";
+import Img from "./lazyLoadImg/Img.jsx";
 import ContentWrapper from "./contentWrapper/ContentWrapper.jsx";
 import SwitchTabs from "./switchTabs/SwitchTabs.jsx";
 import Carousel from "./carousel/Carousel.jsx";
